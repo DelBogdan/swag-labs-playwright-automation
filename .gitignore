@@ -1,0 +1,26 @@
+# Виртуальное окружение
+venv/
+.venv/
+env/
+
+# Python кэш и артефакты
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Allure отчеты (их не хранят в Git, они генерируются локально)
+allure-results/
+allure-report/
+
+# IDE настройки
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Операционная система
+.DS_Store
+Thumbs.db
+
+# Переменные окружения (если будешь хранить пароли в .env)
+.env
