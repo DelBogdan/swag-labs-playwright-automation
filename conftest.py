@@ -1,6 +1,8 @@
 import pytest
 
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import sync_playwright, Page
+
+from pages.authentication.login_page import LoginPage
 
 
 @pytest.fixture(scope='session')
@@ -39,3 +41,8 @@ def get_public_page(get_public_context):
     page = get_public_context.new_page()
     yield page
     page.close()
+
+
+@pytest.fixture
+def login_page(page: Page) -> LoginPage:
+    return LoginPage(page=page)
