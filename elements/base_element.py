@@ -16,8 +16,8 @@ class BaseElement:
     def click(self, nth: int = 0):
         self.get_locator(nth).click()
 
-    def fill(self, text:str, nth: int = 0):
-        self.get_locator(nth).fill(text)
+    def fill(self, value: str, nth: int = 0):
+        self.get_locator(nth).fill(value)
 
     # Проверки элементов
 
@@ -28,4 +28,3 @@ class BaseElement:
     def check_have_text(self, text: str, nth: int = 0):
         locator = self.get_locator(nth)
         expect(locator).to_have_text(text)
-
