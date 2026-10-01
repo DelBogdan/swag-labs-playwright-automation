@@ -13,7 +13,8 @@ def get_browser():
     :return: Возращает объект типа Browser
     """
     with sync_playwright() as playwright:
-        browser = playwright.chromium.launch(headless=False)
+        playwright.selectors.set_test_id_attribute("data-test")
+        browser = playwright.chromium.launch(headless=False, slow_mo=300)
         yield browser
         browser.close()
 
@@ -44,5 +45,5 @@ def get_public_page(get_public_context):
 
 
 @pytest.fixture
-def login_page(page: Page) -> LoginPage:
-    return LoginPage(page=page)
+def login_page(get_public_page: Page) -> LoginPage:
+    return LoginPage(page=get_public_page)

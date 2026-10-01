@@ -19,7 +19,7 @@ class BaseElement:
         :return: Возвращает объект типа Locator
         """
         if isinstance(self.locator, str):
-            base_locator = self.page.get_by_test_id(self.locator).nth(nth)
+            base_locator = self.page.get_by_test_id(self.locator)
         else:
             base_locator = self.locator
         return base_locator.nth(nth)
