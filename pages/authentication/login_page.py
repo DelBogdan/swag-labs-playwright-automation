@@ -25,5 +25,8 @@ class LoginPage(BasePage):
     def check_visible_wrong_email_or_password_alert(self, text: str):
         self.error_component.check_visible(text)
 
+    def check_not_visible_wrong_email_or_password_alert(self):
+        self.error_component.check_not_visible()
+
 
 

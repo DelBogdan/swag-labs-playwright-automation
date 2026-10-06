@@ -1,4 +1,4 @@
-from playwright.sync_api import Page
+from playwright.sync_api import Page, expect
 
 from components.base_component import BaseComponent
 from elements.button import Button
@@ -17,3 +17,7 @@ class ErrorMessageForm(BaseComponent):
         self.error_button.check_visible()
 
         self.title.check_have_text(text)
+
+    def check_not_visible(self):
+        expect(self.title).not_to_be_visible()
+        expect(self.error_button).not_to_be_visible()
