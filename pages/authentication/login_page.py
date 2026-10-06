@@ -20,7 +20,7 @@ class LoginPage(BasePage):
 
     def click_login_button(self):
         self.login_button.click()
-        self.check_current_url(re.compile(r".*/inventory.html"))
+        self.check_current_url(re.compile(r".*/header.html"))
 
     def check_visible_wrong_email_or_password_alert(self, text: str):
         self.error_component.check_visible(text)
